@@ -1,0 +1,731 @@
+/*Estructura de css
+
+	selector{
+		propiedad:  valor;
+	}
+
+*/
+
+/*Selector universal, aplica el estilo a todos los elementos*/
+* {
+	color: #33343C;
+}
+
+/*Selector de tipo, solo cambia el estilo del elemento seleccionado como H1, botton, parrafo, etc.*/
+h3{
+	color: red;
+}
+hr{
+	width: 100%;
+	height: 2px;
+	background-color: black;
+	margin-top: 5px;
+}
+b{
+	margin: 15px;
+	padding: 8px;
+	font-size: 23px;
+	border: 2px dashed blue;
+	display: inline-block;
+}
+
+/*Selector por clase, esto solo aplica a los elementos que son de una misma clase*/
+.clase{
+	color: orange;
+}
+
+/*Selector ID, este ID debe ser único para cada elemento*/
+#id-elemento{
+	color: purple;
+}
+
+/*Selector por atributo es parecido al de clase*/
+[atributo = "name-atributo"] {
+	color: blue;
+}
+
+/*Selector ascendente, aquí los elementos que estén dentro de los contenedores
+	será el que se modifique*/
+h1 p{
+	color: black;
+}
+h1 p span{
+	color: blue;
+}
+
+/*Selector pseudo-clases, estas son por ejemplo hover, nav, etc*/
+.seudo span:hover{
+	color: red;
+}
+
+
+/*La especificidad de los selectores es importante para conocer como se pueden utilizar
+	en el diseño de una página, para recordar bien ver la foto de jerarquía*/
+
+h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important se aplica este*/
+	color: red !important;
+}
+.especificidad{
+	color: blue;
+}
+#especi{
+	color: black;
+}
+
+/*En la metodología BEM solo se llama a traer la clase y el nombre idenficador
+  del objeto al que se le quiere mejorar*/
+.user-form__input--segundo{
+	color: blue;
+}
+.contact-form__input--segundo{
+	color: red;
+}
+
+/*Hay dos unidades para el texto, pueden ser relativas como em (un em son 16px) 
+  rem, vw y % estas dependen de algo, mientras que las fijas como px, cm, mm, pt(puntos)
+  no dependen de nadie*/
+ .unidad-relativa{
+ 	/*EL contenedor que contiene el h2 decide el valor en px de 1em, en este caso se da
+ 		un valor de 20px a 1em*/
+
+ 	/*Esto sirve igual con los padding, margin, left, right.., todo lo que se pueda medir*/
+ 	font-size: 20px;
+ }
+
+ .unidad-relativa__h2{
+ 	/*Es por ello que al poner 5em en el h2 que está dentro del contenedor padre, hereda
+ 		ese valor, haciendo una multiplicacion 20x5 = 100px es lo que vale ahora el h2*/
+ 	font-size: 5em;
+ }
+
+/*El Viewport ocupa el 50, 60, 80 de alto y ancho que se le asigne de la pantalla*/
+ .viewport{
+ 	height: 10vh;
+ 	width: 80vw;
+ 	background-color: yellow;
+ }
+
+/*El Porcentaje ocupa el % de la caja contenedora, en este ejemplo solo se ocupa el
+	50% del ancho del div, y el 30% de alto.*/
+ .porcentaje{
+ 	background-color: yellow;
+ 	width: 50%;
+ 	height: 30%;
+ }
+
+ /*PROPIEDADES DE TEXTO*/
+ .propiedad_texto p{
+
+ 	font-size: 5em; /*Tamaño de la letra*/
+
+ 	font-family: cursive; /*Tipografía*/
+
+ 	/*El Line Height es el espacio total que ocupa la letra dependiendo de su tamaño, 1 LINE HEIGHT 
+ 		ocupa 0.5 para arriba y 0.5 para abajo, si se pone 4 line-height es 2 para arriba y 2 para abajo.
+ 		Todo se va contando apartir de la mital de la palabra*/
+ 	line-height: 4;
+
+ 	font-weight: 800; /*Es el grosor de cada letra*/
+
+ 	color:  red; /*Color de la letra*/
+ }
+
+ /*PROPIEDADES DE LAS CAJAS*/
+ .bloque{
+	/*Los elementos en bloque se pueden transformar en elementos en línea, y lo mismo con los elementos
+		en línea se pueden transformar en elemento en bloque con la propiedad display*/
+		display: inline;
+		background-color: skyblue;
+ }
+ .linea{
+ 	/*A los elementos en bloque si se le pueden dar un height o un width*/
+	 display: block;
+	 background-color: skyblue;
+ }
+
+ .propiedades_cajas{
+ 		background-color: red; /*Cambia el color de fondo*/
+ 		
+ 		display: inline-block;
+
+ 		/*Los padding son los márgenes que hay del texto de la caja, de manera interna.
+ 				
+ 				Hay 4 padding que son: 
+ 				top - right - bottom - left.
+
+ 				padding: 20px; (De esta forma se aplica un padding a los cuatro lados)
+				padding: 20px 30px; (Da un padding top y bottom de 20px, y un 30px al left y right) 
+				padding: 10px 20px 30px 40px; (Primera medida al top - right - bottom - left)		
+				padding: 10px 20px 30px; (10px al top, 20px al right, 30px al bottom y 20px al left)
+ 			*/
+ 		padding: 10px;
+ 		height: 70px; /*Alto de la caja*/
+ 		width: 300px; /*Ancho de la caja*/
+
+ 		text-align: center; /*Alínea el texto al centro*/
+
+ 		/*Los margin son parecidos a los padding, la cuestión es que los margin separan
+ 			las cajas, una de otra. Los px se pueden utilizar igual que en los padding
+ 			En el archivo normalize se tiene un margin de 0 y es por ello que se separan
+ 			un poco las cajas*/
+ 		margin: 10px 20px;
+
+ 		border-radius: 50px; /*Redondea las esquinas de la caja*/
+
+ 		/*El borde de la caja, se puede especificiar de la siguiente manera: 
+
+ 			Grosor del borde - el estilo del borde - color del borde*/
+ 		border: 10px groove blue;
+
+ 		/*BOX MODEL
+ 			Hay una jerarquía entre el content, padding, border y el margin, ese es el
+ 			orden que se debe seguir para poder modificarlos*/
+
+ 		/*Sombra de la caja, el orden es el siguiente: 
+ 			1.- Se modifica en el eje X (derecha)
+ 			2.- Se modifica en el eje Y (abajo)
+ 			3.- Tamaño del desenfoque o tamaño de la sombra
+ 			4.- Cuantos bordes llevará, regularmente se le pone 0
+ 			5.- Color de la sombra
+ 			*/	
+ 		box-shadow: 5px 3px 10px 0 red;
+
+ 		/*Es similar al box shadow solo que no aplica el paso número 4*/
+ 		text-shadow: 2px 2px 7px #fff;
+
+ 		transform: rotate(2deg); /*rota la caja en grados*/
+ }
+
+ /* OUTLINE es una propiedad acortada, genera un borde pero sin afectar a las cajas, no
+ 			ocupa un espacio real, es un resaltador ya que no aumenta el tamaño de la caja,
+ 			simplemente este resaltador va hacia afuera del cuadro, no como el border que va hacia dentro*/
+
+.caja1{
+	width: 200px;
+	height: 200px;
+	background: red;
+	margin: auto; /*De esta forma el navegador centra la caja.*/
+	outline: 20px groove blue;
+}
+
+.caja2{
+	width: 200px;
+	height: 200px;
+	background: yellow;
+	margin: auto;
+}
+
+/*Position posiciona los elementos, adquieren nuevas propiedades y altera el orden en que se ponen
+	los elementos en HTML. 
+
+	Static es el valor por defecto.
+
+	Relative mantiene el valor que se le reservó a la caja, pero la caja se mueve dependiendo el top y left
+		que son las más importantes, si se pone top:  10px, buttom:  20px,. se cumple nadamás el top 10px.
+		esto pasa igual con left:  10px, right: 20px,.  se cumple nadamás el left:  10px.*/
+
+.caja1-relative{
+	width: 120px;
+	height: 120px;
+	background-color: red;	
+}
+
+.caja2-relative{
+	width: 120px;
+	height: 120px;
+	background-color: lightblue;
+
+	position: relative;
+	top: 20px;
+	left: 60px;
+}
+
+.caja3-relative{
+	width: 120px;
+	height: 120px;
+	background-color: orange;
+}
+
+/*Absolute quita el valor reservado que tenía por defecto la caja, de igual manera tiene las propiedades
+	top, left, right, buttom y si colocamos por ejemplo top: 0; se posiciona en top del viewport 
+	(toda la pantalla *Se ve aplastando F11*) */
+
+.caja1-absolute{
+	width: 120px;
+	height: 120px;
+	/*position: absolute;*/
+	/*top: 0;*/
+	background-color: green;
+}
+
+/*En caso de estar dentro de un contenedor sin ningún position y una caja se le coloca en position:  absolute y
+		sin el top: 0; entonces la caja se queda en su mismo lugar, haciendo que la caja de abajo suba. En cambio si se 
+		le coloca el top: 0; a la caja se posicionará conforme al viewport, osea hasta arriba.
+
+		Si la caja no tiene definido el width y el heigth se ajusta al texto (caso de la caja 2).*/
+
+.caja-absolute{
+	margin: 10px;
+	border: 10px solid lightblue;
+	position: relative;
+}
+
+.caja-absolute__1{
+	width: 120px;
+	height: 120px;
+	background-color: lightgreen;
+}
+
+.caja-absolute__2{
+	background-color: lightpink;
+	left: 80px;
+	top: 0;
+	position: absolute;
+	opacity: .5; /*El opacity es del 0 al 1 (0 es totalmente transparente), se puede poner:  .52, .845, etc.*/
+}
+
+.caja-absolute__3{
+	width: 120px;
+	height: 120px;
+	background-color: lightsalmon;
+}
+
+/* Aquí hay un contenedor que contiene 5 cajas, cada una de ellas irá en una esquina y en medio. Para ello el 
+	contendor debe tener una position: relative; porque de esta manera las cajas toman el top, left, right y bottom 
+	del contendor y no del viewport.*/
+
+.caja-absolute2{
+	position: relative;
+	border: 4px groove skyblue;
+	margin: 50px auto; /*Tiene un margen arriba y abajo de 50px, a los costados es centrado*/
+	width: 400px;
+	height: 400px;
+	background: green;
+}
+
+.caja-absolute2 div{
+	height: 75px;
+	width: 75px;
+	background: yellow;
+	text-align: center;
+	padding-top: 27px;
+	position: absolute; /*Todas las cajas que están dentro del contenedor ya tiene la position: absolute;*/
+}
+
+.caja1-absolute2{
+	top: 0;
+}
+.caja2-absolute2{
+	right: 0;
+}
+.caja3-absolute2{
+	bottom: 0;
+}
+.caja4-absolute2{
+	right: 0;
+	bottom: 0;
+}
+.caja5-absolute2{
+	/*Con esto se centra una caja, facilita y evitar el hacer cálculos de pixeles.*/
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+/*El z-index ayuda a darle una jerarquía a las position:  relative
+	en este ejemplo se coloca al contenedor padre encima del contenedor hijo,
+	cabe resaltar que el hijo siempre estará por encima del padre, y una forma
+	de poner al padre por encima del hijo es la siguiente: */
+	.contenedor{
+		margin: 30px;
+		width: 150px;
+		height: 150px;
+		background: black;
+		position: relative;
+	}
+	.hijo{
+		width: 100px;
+		height: 100px;
+		top:  -10px;
+		left: -10px;
+		background: red;
+		position: relative;
+		z-index: -1;
+	}
+
+/*Fixed fija el contenido, el scroll mientras va bajando el contenido con position fixed
+	sigue bajando y no se queda arriba.*/
+.caja-fixed{
+	background: yellow;
+	font-size: 20px;
+	color: red;
+	/*position: fixed;*/
+	top: 0px;
+}
+.texto{
+	font-size: 20px;
+	color: red;
+}
+
+/*Sticky es una tipo fusión de la position relative y fixed, ya que sigue ocupando su lugar
+	reservado y a la misma vez va bajando junto con el scroll */
+.caja-sticky{
+	/*position: sticky;*/
+	top: 10px;
+	font-size: 20px;
+	color: black;
+	background-color: green;
+}
+
+/*Hay varios formatos para el display pero los más usados son block, inline y
+	inline-block. Recordar que los elementos en bloque como p, div, section se le
+	pueden modificar el alto y el ancho. Mientras que los inline son como b no.
+	Los inline-block si se le pueden agregar un alto y un ancho, así mismo se
+	colocan como un inline*/
+
+.blocke{
+	background: yellow;
+	margin-left: 10px;
+	height: 50px;
+	width: 500px;
+}
+
+.linea-display{
+	background: red;
+	font-size: 50px;
+	margin-left: 10px;
+	color: black;
+	height: 100px; /*Aquí no sirve*/
+}
+
+.linea-block{
+	display: inline-block;
+	background: blueviolet;
+	/*Aquí si se aplica el height y el width*/
+	height: 80px;
+	width: 300px;
+	color: black;
+	font-size: 50px;
+}
+
+/*El overflow sirve para ajustar cualquier texto a un párrafo, para que no se salga
+	de este y respete su tamaño. Tiene la posición Y, X.
+	También tiene propiedades Auto, Hidden y Scroll. */
+
+.overfloow{
+	margin: 10px auto;
+	width: 250px;
+	height: 300px;
+	background: lightcoral;
+	border: 5px groove lime;
+	font-size: 50px;
+
+	/*Aquí se ocupa el overflow con la propiedad Auto, esta coloca un scroll en el eje
+		Y - X para poder visualizar bien el texto.*/
+	overflow: auto;
+}
+
+.div-over{
+	margin: auto;
+	margin-top: 10px;
+	width: 250px;
+	height: 300px;
+	border: 5px groove green;
+
+	/*Con la propiedad hidden la imagen se auto ajusta al tamaño del contenedor, la imagen
+		se puede mover arriba, abajo, derecha o izquierda pero no se saldrá del contenedor.*/
+	overflow: hidden;
+}
+
+.overfloow2{
+	top: 150px;
+	left: 140px;
+	width: 1000px;
+	position: relative; /*Se posiciona para que conserve su espacio*/
+	outline: 5px groove blue;
+}
+
+.overfloow3{
+	margin: 50px auto;
+	width: 250px;
+	height: 300px;
+	background: brown;
+	border: 5px groove green;
+	font-size: 50px;
+
+	/*Con la propiedad hidden ya sea en Y o X se autoajusta, en este ejemplo se coloca hidden
+		al eje Y pero al hacer esto no se puede bajar porque se autoajusto al alto del contenedor.
+
+		Mientras que al eje X se le coloca Auto o Scroll y muestra la barra para mover.*/
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+/*El float sirve para posicionar las imágenes o los contenedores, generalmene se ocupan
+	el right y left, en este ejemplo se muestra como un texto envuelve una imágen*/
+
+.contenedor_float{
+	background: darkcyan;
+	width: 500px;
+	height: 500px;
+	border: 5px solid black;
+	margin: 10px auto;
+}
+
+.contenedor_float p{
+	padding: 20px 10px;
+	color: black;
+}
+
+.contenedor_float img{
+	float: left; /*La imagen es envolvida por el texto*/
+	width: 120px;
+	height: 120px;
+	margin: 20px;
+	outline: 5px groove red;
+}
+
+/*Hay 6 tipos de PSEUDO-ELEMENTOS.
+
+	El primero es ::first-line que modifica solamente la primera línea de un texto.
+	El segundo es ::first-letter que modifica la primera letra de todo el texto.
+	El tercero es ::placeholder que modifica el placeholder (palabras puestas en input).
+	EL cuarto es  ::selection que al subrayar un texto o palabra se puede cambiar el fondo y color.
+	El quinto y sexto es  ::before y ::after que funcionan dentro de un contenedor y son un elemento en línea. 
+		Este se le puede agregar palabras antes y después de lo ya escrito en HTML. */
+
+.primera-linea::first-line{
+	color: blue;
+	font-size: 20px;
+}
+
+.primera-letra::first-letter{
+	font-size: 50px;
+	color: red;
+}
+
+.placehold{
+	margin: 10px auto;
+	padding: 50px;
+	background: yellow;
+	width: 50%;
+	display: block;
+}
+.placehold input{
+	padding: 6px;
+	width: 100%;
+}
+.placehold input::placeholder{
+	color: red;
+	font-size: 20px;
+}
+
+.seleccion{
+	color: black;
+	font-size: 30px;
+}
+.seleccion::selection{
+	background-color: black;
+	color: red;
+}
+
+.antes_despues{
+	width: 200px;
+	margin: 10px;
+	padding: 5px;
+	text-align: center;
+	background: yellow;
+}
+.antes_despues::before{
+	content: "Metallica";
+}	
+
+.antes_despues::after{
+	content: "la luz";
+}
+
+/* Las Pseudo-clases, hay varias pero entre la más usadas son:
+		:hover que funciona cuando el cursor pasa por encima hace las animaciones,
+				este sirve con cualquier elemento, también se puede modificar el tamaño.
+		:link cambiar el link que aún no se ha visitado
+		:visited cambia el link que ya se visitó
+		:active funciona cuando se presiona el elemento, podemos cambiar sus propiedades.
+		:focus funciona solo con los input, cuando ya está seleccionado se hacen los cambios.
+		:lang se utiliza para resaltar los lang especificados por idioma, por ejemplo es, en.
+		*/
+
+.hoveer{
+	height: 50px;
+	width: 220px;
+	background: skyblue;
+	border: 3px solid purple;
+	margin: 20px;
+	padding: 10px;
+	transition: all 1s;
+}
+.hoveer:hover{
+	background: lightyellow;
+	height: 80px;
+	width: 250px;
+	border: 3px solid blue;
+}
+
+.enlace1:link{
+	color: red;
+}
+.enlace2:visited{
+	color: red;
+}
+
+.activee{
+	background: skyblue;
+	width: 170px;
+	height: 100px;
+	margin: 25px;
+	padding: 40px 10px;
+	text-align: center;
+	font-size: 20px;
+	transition: all 1s;
+}
+.activee:active{
+	background: lightgreen;
+	width: 500px;
+	height: 100px;
+}
+
+.focuss{
+	margin: 25px;
+	background: lightgrey;
+	transition: background .4s, padding .4s;
+}
+.focuss:focus{
+	background: white;
+	padding: 20px;
+}
+
+.langg{
+	margin: 10px;
+	height: 50px;
+	height: 50px;
+	background: lightgrey;
+}
+.langg p:lang(en){
+	background: red;
+}
+
+/* El Object-Fit se utiliza mucho con las imágenes, sus valores son:
+		Contain: este valor viene por defecto, hace que las resoluciones se ajusten al contenido
+		Cover: la imagen se acopla al tamaño de la caja, sin dejar espacios como en Contain.
+		None: mete la imagen tal y como es en tamaño.
+		Scale-down: escoge entre Contain y Cover la cual ocupa menos espacio para adaptar a la imágen. */
+
+/* El Objecto-Position sirve para posicionar la imágen, ya sea en Top, Buttom, Left o right. Tiene
+		más propiedades como los em, %, px, etc. */
+.caja_object{
+	height: 120px;
+	width: 200px;
+	margin: 10px;
+}
+.containn{
+	height: 100%;
+	width: 100%;
+	border: 3px solid red;
+	object-fit: contain;
+}
+
+.caja_object2{
+	height: 150px;
+	width: 1280px;
+	margin: 10px;
+}
+.coverr{
+	height: 100%;
+	width: 100%;
+	border: 3px solid blue;
+	object-fit: cover;
+	object-position: bottom;
+}
+
+.caja_object3{
+	height: 120px;
+	width: 1280px;
+	margin: 10px;
+}
+.nonee{
+	height: 100%;
+	width: 100%;
+	border: 3px solid blue;
+	object-fit: none;
+}
+
+.caja_object4{
+	height: 250px;
+	width: 280px;
+	margin: 10px;
+}
+.scale{
+	height: 100%;
+	width: 100%;
+	border: 3px solid blue;
+	object-fit: scale-down;
+}
+
+.cursor{
+	height: 150px;
+	width: 150px;
+	background: pink;
+	margin: 10px;
+	border: 2px solid red;
+	cursor: progress;
+}
+
+/* Los Colores se pueden colocar por nombre, RGB, RGBA y Hexadecimal, que son los métodos más
+		utilizados.
+		
+		Nombre: solo se escribre el nombre del color, hay muchos ya designados.
+		RGB:  estos colores son ROJO, VERDE AZUL, van del 0 al 255 siendo el 0 el más obscuro de estos;
+					y el 255 el más claro, se pueden ir haciendo mezclas de estos números.
+		RGBA: es lo mismo que el RGB solo que se le agrega un parámetro más que es la opacidad,
+					el 1 es lo menos ocapo, va disminuyendo como .9, .8 etc que lo hace más opaco.
+		HEXADECIMAL:  Aquí los colores van del 1 al 10 y continuan de A hasta F, esto porque así es;		 
+									la cuenta en hexadecimal, donde 1 es lo más obscuro y F lo más claro. Hay una imágen
+									en la carpeta que explica mejor esto, se pueden utilizar 3 o 8 números.
+		*/
+
+.nombre{
+	width: 150px;
+	height: 150px;
+	margin: 10px;
+	background: yellow;
+}
+.rgb{
+	width: 150px;
+	height: 150px;
+	margin: 10px;
+	background: rgb(100,150,150);
+}
+.rgba{
+	width: 150px;
+	height: 150px;
+	margin: 10px;
+	background: rgba(150, 60, 200, .5);
+}
+.hexa{
+	width: 150px;
+	height: 150px;
+	margin: 10px;
+	background: #f90;
+}
+.cajaImagen{
+	margin: 20px auto;
+	width: 60%;
+	height: 100%;
+	outline: 5px groove rgb(160, 180, 255);
+}
+.imagenHexa{
+	width: 100%;
+	height: 100%;
+	object-fit: scale-down;
+}

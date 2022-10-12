@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+
+	<!--El link hace referencia a la hoja de estilos que se estan aplicando-->
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<script src="https://kit.fontawesome.com/f84990339e.js" crossorigin="anonymous"></script>
+	<title>Aprendiendo CSS</title>
+</head>
+<body>
+
+	<!--Elementos con el selector universal (*)-->
+	<h1><i>Selectores Universales</i></h1>
+	<h2>Título H2 con CSS</h2>
+	<input type="text" value="Harold">
+	<button>PRESIONA</button><br>
+	<b>Selector universal aplica el estilo a todos los elementos de la hoja de estilos.</b>	
+	<hr>
+
+	<!--Elemento con el selector de tipo (h3)-->
+	<h1><i>Selectores de tipo</i></h1>
+	<h3>H3 con selector de tipo</h3>
+	<b>Selector de tipo solo cambia el estilo del elemento seleccionado como H1, button, parrafo, etc.</b>
+	<hr>
+
+	<!--Elemento con el selectior de clase-->
+	<h1><i>Selectores de clase</i></h1>
+	<h4 class="clase">Prueba con el selector clase</h4>
+	<b>Selector por clase solo aplica los estilos a los elementos que son de una misma clase.</b>
+	<hr>
+
+	<!--Elemento con el selector ID-->
+	<h1><i>Selector ID</i></h1>
+	<p id="id-elemento">Prueba con el selector ID</p>
+	<b>Selector ID es único para cada elemento, tiene más prioridad que la clase.</b>
+	<hr>
+
+	<!--Elemento con el selector de atributo-->
+	<h1><i>Selector de Atributo</i></h1>
+	<p atributo="name-atributo">Prueba con el selector de Atributo</p>
+	<b>Selector por atributo es parecido al de clase solo que con menor jerarquia.</b>
+	<hr>
+
+	<!--Elemento para probar los selectores de forma ascendentes-->
+	<h1><i>Selectores Ascendentes</i></h1>
+	<h1><p>Prueba para cambiar solo el color de p<span> rancio</span></p></h1>
+	<b>Selector ascendente modifica los elementos que están dentro de este</b>
+	<hr>
+
+	<!--Elemento para probar los selectores pseudo-clases-->
+	<h1><i>Selector con pseudo clases</i></h1>
+	<p class="seudo"><span>Prueba para probar la pseudo-clase con un hover</span></p>
+	<b>Estos selectores usan pseudo clases como hover, nav, etc.</b>
+	<hr>
+
+	<!--Ejemplo de la jerarquía de los Selectores-->
+	<h1><i>Especificidad</i></h1>
+	<h4 class="especificidad" id="especi" style="color:green">Especificidad a más no poder.</h4>
+	<b>La especificidad de los selectores se usan para dar prioridad y así aplicar los estilos.
+		<pre>
+		class="especificidad" id="especi" style="color:green">Especificidad a más no poder.
+		</pre>
+		Hace caso primero a la clase, luego al ID, luego al estilo en línea pero en el estilo.css se
+		coloca el !important de color rojo.
+	</b>
+	<hr>
+
+	<!--La metodología BEM sirve parar separar apartir de las clases, se conoce
+		la clase y el elemento que se está seleccionando, ejemplo:
+		form__'nombre del elemento' -->
+	<h1><i>Metodología BEM</i></h1>
+	<div class="user-form">
+		<!--Cuando se tiene varios input y se quiere resaltar uno de los demás
+			solo se agregan -- y el nombre que querramos, de esta manera identificamos a este de los demás.-->
+		<input type="text" class="user-form__input--primero">
+		<input type="text" class="user-form__input--segundo">
+	</div>
+	<div class="contact-form"> <!--Esta clase es la más importante-->
+		<input type="text" class="contact-form__input--primero">
+		<input type="text" class="contact-form__input--segundo">
+	</div>
+	<b>Esta metodología sirve para separar los elementos en clases, esto con un orden jerárquico de 
+		importancia, se agrega -- después del nombre de la clase para dar un nombre a un elemento en
+		específico.
+		<pre>
+			div class="contact-form"> |Esta clase es la más importante|
+				input type="text" class="contact-form__input--primero">
+				input type="text" class="contact-form__input--segundo">
+			/div>
+		</pre>
+	</b>
+	<hr>
+
+	<!--Contenedor para ver las medidas relativas, em rem-->
+	<h1><i>Medidas Relativas</i></h1>
+	<div class="unidad-relativa">
+		<h2 class="unidad-relativa__h2">Hola</h2>
+	</div>
+	<b>Las medidas relativas dependen del elemento padre, en este caso unidad-relativa tiene 20px dando
+		que 1em equivalga a 20px. Pero unidad-relativa__h3 tiene 5em haciendo que h3 tenga una medida de
+		100px (20*5).</b>
+
+	<!--Contenedor para ver las medidas viewport y el %-->
+	<h2>Viewport</h2>
+	<div class="viewport">Viewport</div>
+	<b>El viewport es el total de la pantalla, este div tiene un alto de 10vh y de ancho 80vw.</b>
+	<h2>Porcentaje</h2>
+	<div class="porcentaje">Porcentaje</div>
+	<b>El porcentaje ocupa la cantidad especificada de la caja, en este caso se ocupa el 50% de ancho y
+		el 30% de alto de la caja.</b>
+	<b>NOTA: El ancho inicial de todos los elementos de bloque como div o p es de manera auto (automática), esto hace que se expandan y ocupen todo el espacio horizontal de su bloque contenedor.</b>
+	<hr>
+
+	<!--Contenedor para ver las propiedades de texto-->
+	<h1><i>Propiedades de texto</i></h1>
+	<div class="propiedad_texto">
+		<p>Hola</p>
+	</div>
+	<b>Este "Hola" tiene un tamaño de 5em, una tipografía de cursive, un line-height de 4; apartir de la
+		mitad de la palabra son 2 para arriba y 2 para abajo, es por ello que sobra espacio, grosor de 800 y un color rojo.</b>
+	<hr>
+
+	<!--Propiedades de las cajas-->
+	<!--Diferencia entre los elementos en bloque y en linea, recordar que h1, p
+		son en bloque y b es en línea-->
+	<h1><i>Propiedades de Caja</i></h1>
+	<h2 class="bloque">Elemento en bloque</h2>
+	<i class="linea">Elemento en línea</i>
+	<b>Los elementos en bloque y en línea pueden tomar una propiedad contraria, es lo que se hizo en este
+		caso.</b>
+
+	<h2 class="propiedades_cajas">Racio Bich 1</h2>
+	<h2 class="propiedades_cajas">Racio Bich 2</h2>
+	<b>Ambas cajas tienen un color de fondo rojo, el texto tiene un padding de 10px en los cuatro lados
+		de la caja esto para separar las letras de la caja, ambas cajas tienen una altura de 70px y un
+		ancho de 300px, el texto está centrado.</b>
+	<b>Ambas cajas tienen un margin de 10px arriba y abajo, y 20px a los lados esto para separar una caja
+		de la otra, tienen un border-radius de 50px para redondear las esquinas, también tienen un border
+		de 10px un estilo groove y color azul.</b>
+	<b>A las cajas se les da una sobra derecha de 5px, una inferior de 3px, la sombra tiene un tamaño de
+		10px y el color de la sombra de la caja es roja. También la letra lleva una sombra con diferentes
+		medidas y color. Por último tiene una rotación de 2 grados.</b>
+	<hr>
+	
+	<!--Cajas para ver el funcionamiento del OUTLINE-->
+	<h1><i>Outline</i></h1>
+	<div class="caja1"></div>
+	<div class="caja2"></div>
+	<b>Outline es un borde pero sin afectar a las cajas, no ocupa un espacio real, es un resaltador ya que no aumenta el tamaño de la caja</b>
+	<hr>
+
+	<!--Cajas para ver la Position Relative-->
+	<h1>Relative</h1>
+	<div class="caja1-relative">Caja 1</div>
+	<div class="caja2-relative">Caja 2</div>
+	<div class="caja3-relative">Caja 3</div>
+	<b>Mantiene el valor que se reservó para la caja, pero se mueve dependiento el top y el left.</b>
+	<hr>
+	
+	<!--Cajas para ver la Position Absolute-->
+	<h1>Absolute</h1>
+	<div class="caja1-absolute">Caja 1</div>
+	<b>Si la caja tiene la position absolute y un top: 0 se coloca hasta arriba del viewport. (Líneas 256 y 257 comentadas para evitarlo)</b>
+	<section class="caja-absolute">
+		<div class="caja-absolute__1">Caja 1</div>
+		<div class="caja-absolute__2">Caja 2</div>
+		<div class="caja-absolute__3">Caja 3</div>
+	</section>
+	<b>Cuando varias cajas están en un contenedor con position: relative y una de estas se le coloque un position: absolute, la caja se queda en su lugar pero sube la de abajo.</b>
+	<b>Si la caja no tiene definido el width y el height se ajusta al texto escrito. Si se le coloca un top: 0; la caja se va hasta arriba del viewport o la caja contenedora.</b>
+
+	<section class="caja-absolute2">
+		<div class="caja1-absolute2">Caja 1</div>
+		<div class="caja2-absolute2">Caja 2</div>
+		<div class="caja3-absolute2">Caja 3</div>
+		<div class="caja4-absolute2">Caja 4</div>
+		<div class="caja5-absolute2">Caja 5</div>
+	</section>
+	<b>La caja contenedora tiene una position relative para que las demás cajas puedan tomarla como el viewport. Para centrar la caja top, left, right y bottom tienen 0 y un margin auto.</b>
+	<b>Las cincos cajas tienen position: absolute para que pueden moverse libremente por el contenedor, si tuvieran position: relative no pudieran acomodarse por el espacio reservado de cada caja.</b>
+	<hr>
+
+	<!--Cajas para ver el z-index-->
+	<h1>z-index</h1>
+	<div class="contenedor">
+		<div class="hijo"></div>
+	</div>
+	<b>El z-index ayuda a darle una jerarquía a las cajas con position: relative, el contenedor hijo siempre estará por encima del contendor padre, con z-index: -1 el hijo se coloca atrás del padre.</b>
+	<hr>
+
+	<!--Cajas para ver la position Fixed-->
+	<h1>Fixed</h1>
+	<div class="caja-fixed">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+	<div class="texto">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+	<b>Fixed hace que el elemento con esta característica vaya bajando al igual que el scroll view de la página, también se ajusta al contenido. Ahora esta comentada la línea 364.</b>
+	<hr>
+
+	<!--Caja para ver la position sticky-->
+	<h1>Sticky</h1>
+	<div class="texto">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.
+	</div>
+	<div class="caja-sticky">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.
+	</div>
+	<div class="texto">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+	<b>Sticky funciona igual que la position fixed y relative, ya que baja al igual que el scroll view y mantiene
+		el espacio de su elemento reservado. Está comentada en la línea 375.</b>
+	<hr>
+
+	<!--Diferencias entre display en block, inline y inline-block-->
+	<h1>Display</h1>
+	<p class="blocke">Bloque</p>
+	<b>Los elementos en block pueden modificar su altura y anchura.</b>
+	<br>
+	<i class="linea-display">Inline</i>
+	<i class="linea-display">Inline</i>
+	<i class="linea-display">Inline</i>
+	<b>Los elementos inline no pueden modificar su altura y anchura, si hay varios elementos con este display se van a colocan en línea.</b>
+
+	<b class="linea-block">Inline-block</b>
+	<b class="linea-block">Inline-block</b>
+	<b class="linea-block">Inline-block</b>
+	<b>Los elementos inline-block pueden modificar su altura y anchura, y también se van colocando en línea.</b>
+	<hr>
+
+	<!--Overflow-->
+	<h1>Overflow</h1>
+	<p class="overfloow">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		lorem
+	</p>
+	<b>Overfloow ayuda a que un texto no se salga de la caja contenedora. El overfloow: auto agrega un scroll al contenedor tanto en el eje X como en Y.</b>
+
+	<div class="div-over">
+		<img src="https://thumbs.dreamstime.com/z/ejemplo-del-vector-de-las-gafas-sol-que-llevan-la-cara-linda-133937553.jpg" class="overfloow2">		
+		</img>
+	</div>
+	<b>Overfloow: hidden ayuda con las imágenes dentro de un contenedor para que estas no se salgan, solo se vayan recorriendo. hidden no ayuda al texto ya que no se muestra todo.</b>
+
+	<p class="overfloow3">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		lorem
+	</p>
+	<b>En este contenedor el eje Y tiene un overfloow-y: hidden haciendo que el contenedor se ajuste al texto y no se pueda bajar más, mientras el eje X tiene un overfloow-x: auto haciendo que el scroll se ajuste.</b>
+	<hr>
+
+	<!--Float-->
+	<h1>Float</h1>
+	<div class="contenedor_float">
+		<div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<img src="https://thumbs.dreamstime.com/z/ejemplo-del-vector-de-las-gafas-sol-que-llevan-la-cara-linda-133937553.jpg">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+	</div>
+	<b>Float ayuda a posicionar una imagen o un contenedor, generalmente se usa el right o left.</b>
+	<hr>
+
+	<!--Pseudo-Elementos-->
+	<h1>Pseudo-Elementos</h1>
+	<h2>::first-line</h2>
+	<p class="primera-linea">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<b>::first-line modifica solamente la primera línea de un texto.</b>
+
+	<h2>::first-letter</h2>
+	<p class="primera-letra">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	<b>::first-letter modifica solo la primera letra de todo el texto.</b>
+
+	<h2>::placeholder</h2>
+	<form class="placehold">
+		<input type="text" placeholder="Weeey Nooo :'v">
+	</form>
+	<b>::placeholder muestra por defecto palabras dentro de un input, al escribir algo se quita la palabra por defecto.</b>
+
+	<h2>::selection</h2>
+	<p class="seleccion">Subraya el texto</p>
+	<b>::selection hace que al subrayar un texto o palabra se puede cambiar el fondo y color.</b>
+
+	<h2>::after y ::before</h2>
+	<div class="antes_despues">
+		<i>es</i>
+	</div>
+	<b>::before y ::after funcionan dentro de un contenedor, son un elemento en línea. Ha ambos se le pueden agregar palabras antes y después de lo ya escrito en HTML en el código CSS.</b>
+	<hr>
+
+	<!--Pseudo-Clases-->
+	<h1>Pseudo-Clase</h1>
+	<h2>:Hover</h2>
+	<div class="hoveer">
+		<i>Pasar el cursor por encima</i>
+	</div>
+	<b>:hover funciona cuando el cursor pasa por encima, hace las animaciones, sirve con cualquier elemento, también se puede modificar el tamaño.</b>
+
+	<h2>:link y :visited</h2>
+	<a class="enlace1" href="https://teziutlan.tecnm.mx/index.php/estructura-organica/" target="_BLANK">Enlace no visitado</a>
+	<!--El target="_BLANK" sirve para abrir el enlace en otra página-->
+	<a class="enlace2" href="https://teziutlan.tecnm.mx?dsfascdsa" target="_BLANK">Enlace visitado</a>
+	<b>:link resalta un link que no se ha visitado, :visited cambia el texto cuando se entro al link. NOTA: target="_BLANK" abre una nueva ventana del navegador.</b>
+
+	<h2>:active</h2>
+	<div class="activee">
+		<p>Presioname</p>
+	</div>
+	<b>:active funciona cuando se presiona el elemento, podemos cambiar sus propiedades.</b>
+
+	<h2>:focus</h2>
+	<input type="text" name="Pruba" class="focuss"><br>
+	<b>:focus funciona solo con los input, cuando ya está seleccionado se hacen los cambios.</b>
+
+	<h2>:lang</h2>
+	<div class="langg">
+		<p>Español</p>
+		<p lang="en">English</p>
+	</div>
+	<b>:lang se utiliza para resaltar los lang especificados por idioma, por ejemplo es, en.</b>
+	<hr>
+
+	<!--Object-Fit-->
+	<h1>Object-Fit y Objecto-Position</h1>
+	<h2>Contain</h2>
+	<div class="caja_object">
+		<img class="containn" src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
+	</div>
+	<b>Contain: este valor viene por defecto, hace que la resolución de la imagen se ajusten al contenedor padre dejando espacios en blanco.</b>
+
+	<h2>Cover</h2>
+	<div class="caja_object2">
+		<img class="coverr" src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
+	</div>
+	<b>Cover: la imagen se acopla al tamaño de la caja, sin dejar espacios como en Contain.</b>
+	<b>El Objecto-Position sirve para posicionar la imágen, ya sea en Top, Buttom, Left o right.</b>
+
+	<h2>None</h2>
+	<div class="caja_object3">
+		<img class="nonee" src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
+	</div>
+	<b>None: usa el tamaño de la imagen, no importa las dimensiones del contenedor.</b>
+
+	<h2>Scale-Down</h2>
+	<div class="caja_object4">
+		<img class="scale" src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
+	</div>
+	<b>Scale-down: escoge entre Contain y Cover, toma el que genere menos dimensión a la imagen.</b>
+	<hr>
+
+	<!--Cursor-->
+	<h1>Cursor</h1>
+	<div class="cursor">Coloca el cursor encima</div>
+	<b>Cursor: hace que cambie la forma del cursos, existe pointer, row-resize, progress, etc.</b>
+	<hr>
+
+	<!--Colores-->
+	<h1>Colores</h1>
+	<div class="nombre">Color por nombre</div>
+	<b>Solo se escribre el nombre del color, hay muchos ya designados.</b>
+	<div class="rgb">Color por RGB</div>
+	<b>Los colores primarios son Rojo, Verde y Azul (RGB - Red, Green, Blue). Con RGB se va del 0 al 255, donde 0 es el más obscuro, mientras que 255 es el color más claro. La sintaxis es rgb(100,150,150)</b>
+	<div class="rgba">Color por RGBA</div>
+	<b>Es lo mismo que el RGB solo que se le agrega el parámetro de opacity, el 1 es lo menos ocapo, va disminuyendo como .9, .8 etc que lo hace más opacity. La sintaxis es rgba(150, 60, 200, .5)</b>
+	<div class="hexa">Color en Hexadecimal</div>
+	<b>Aquí los colores van del 1 al 10 y continuan de A hasta F, esto porque así es la cuenta en hexadecimal, donde 1 es lo más obscuro y F lo más claro.</b>
+	<div class="cajaImagen">
+		<img src="Colores Hexadecimal.png" class="imagenHexa">
+	</div>
+	<hr>
+
+	<!--Mobile First-->
+	<h1>Mobile First</h1>
+	<p>Es adaptar resoluciones pequeñas a grandes (Moviles - Tablet - Escritorio)</p>
+	<a href="responsive.html">Página de Responsive Desing sin JavaScript.</a>
+	<b>La etiqueta <i>meta viewport</i> sirve ayuda a que se respeten las dimensiones de los elementos en una tablet, mobil o escritorio.</b>
+	<b>Para poder usar íconos de Font Awesome se necesita el script de un proyecto (dentro de head). Y dentro de la definición de la clase de un elemento i, se coloca el tipo de ícono. <i class="fas fa-address-card"></i></b>
+	04:25 ME QUEDE
+</body>
+</html>
