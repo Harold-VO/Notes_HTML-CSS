@@ -729,3 +729,13 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 	height: 100%;
 	object-fit: scale-down;
 }
+
+/* FlexBox */
+.flex-container{
+	display: flex;
+}
+
+.flex-item {
+	background-color: aquamarine;
+	margin: 5px;
+}
