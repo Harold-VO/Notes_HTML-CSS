@@ -730,7 +730,8 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 	object-fit: scale-down;
 }
 
-/* FlexBox */
+/* FlexBox 
+	Son cajas flexibles, se requiere de un Flex Container y Flex Item. FlexBox tiene dos ejes: eje "y" cross axis, eje "x" main axis.*/
 .flex-container{
 	display: flex;
 }
@@ -738,4 +739,68 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 .flex-item {
 	background-color: aquamarine;
 	margin: 5px;
+}
+
+.flexImg-content {
+	width: 70vh;
+	height: 30vh;
+	margin: 5px auto;
+	border: 3px solid #f90;
+}
+
+.flexImg {
+	height: 100%;
+	width: 100%;
+	object-fit: scale-down;
+}
+
+.code {
+    display: inline-flex;
+    background-color: #2c3e50;
+    color: #FFF;
+    padding: 12px;
+    margin: 10px 20px;
+    font-family: monospace;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.code-selector {
+    font-family: inherit;
+    color: #FFB84F;
+    padding-right: 5px;
+}
+
+.code-property {
+    font-family: inherit;
+    color: #5E9BC6;
+    padding-left: 5px;
+    padding-right: 3px;
+}
+
+.code-value {
+    font-family: inherit;
+    color: #D37754;
+    padding-left: 5px;
+}
+
+.flex-direction {
+	display: flex;
+	/* la propiedad flex-direction tiene diferentes direcciones:
+		-row
+		-row-reverse (cambian la direccion del main axis)
+		-column
+		-column-reverse (cambian la direccion del cross axis) */
+	flex-direction: row-reverse;
+}
+
+.flex-direction_item {
+	background-color: #FFB84F;
+	height: 120px;
+	width: 120px;
+	margin: 5px;
+}
+
+.green {
+	background-color: green;
 }

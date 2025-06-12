@@ -446,17 +446,34 @@
 	<b>Para poder usar íconos de Font Awesome se necesita el script de un proyecto (dentro de head). Y dentro de la definición de la clase de un elemento i, se coloca el tipo de ícono. <i class="fas fa-address-card"></i></b>
 	<hr>
 
-	<!-- FlexBox 
-	 	Son cajas flexibles, se requiere de un FlexConteiner (contiene los item) y un FlexItem. FlexBox tiene dos ejes, eje y cross axis, eje x main axis. -->
+	<!--FlexBox-->
 	<h1>FlexBox</h1>
+	<b>El Diseño de Caja Flexible facilita el diseño responsible y flexible. Se requieren dos componentes: Flex Container: contenedor principal y Flex Items: elementos dentro del contenedor.</b>
+	<b>Tiene Ejes: Que son main axis (eje principal) y cross axis (eje secundario). Y para complementar main size, cross size, main start, main end, cross start, cross end.</b>
+	<div class="flexImg-content">
+		<img class="flexImg" src="Flex-Components.jpg" alt="Flex-Components">
+	</div>
+	<h2>Flex</h2>
 	<div class="flex-container">
 		<div class="flex-item">
 			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum repudiandae dicta consequatur at totam delectus sequi, sed nisi, quidem unde sit doloribus odio numquam non earum voluptatem natus itaque quasi. 
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro alias velit ducimus iusto amet dignissimos optio aliquid accusantium illo minima dolore numquam voluptatibus consequuntur, modi ut nostrum vero dolorum mollitia!
 		</div>
 		<div class="flex-item">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. lorem
 		</div>
+	</div>
+	<b>El flex-container tiene la propiedad display: flex, permitiendo que ambos contenedores se ajusten de acuerdo a su contenido.</b>
+	<code class="code">
+		<span class="code-selector">.flex-container </span> { <span class="code-property">display</span> : <span class="code-value">flex</span> ; }
+	</code>
+
+	<h2>Flex-Direction</h2>
+	<b>Flex-Direction tiene varias propiedades que permiten manipular el sentido del main axis y cross axis.</b>
+	<div class="flex-direction">
+		<div class="flex-direction_item green"></div>
+		<div class="flex-direction_item"></div>
+		<div class="flex-direction_item"></div>
 	</div>
 
 </body>
