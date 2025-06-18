@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
 	<script src="https://kit.fontawesome.com/f84990339e.js" crossorigin="anonymous"></script>
 	<title>Aprendiendo CSS</title>
 </head>
+
 <body>
 
 	<!--Elementos con el selector universal (*)-->
@@ -18,7 +20,7 @@
 	<h2>Título H2 con CSS</h2>
 	<input type="text" value="Harold">
 	<button>PRESIONA</button><br>
-	<b>Selector universal aplica el estilo a todos los elementos de la hoja de estilos.</b>	
+	<b>Selector universal aplica el estilo a todos los elementos de la hoja de estilos.</b>
 	<hr>
 
 	<!--Elemento con el selector de tipo (h3)-->
@@ -47,7 +49,9 @@
 
 	<!--Elemento para probar los selectores de forma ascendentes-->
 	<h1><i>Selectores Ascendentes</i></h1>
-	<h1><p>Prueba para cambiar solo el color de p<span> rancio</span></p></h1>
+	<h1>
+		<p>Prueba para cambiar solo el color de p<span> rancio</span></p>
+	</h1>
 	<b>Selector ascendente modifica los elementos que están dentro de este</b>
 	<hr>
 
@@ -83,7 +87,7 @@
 		<input type="text" class="contact-form__input--primero">
 		<input type="text" class="contact-form__input--segundo">
 	</div>
-	<b>Esta metodología sirve para separar los elementos en clases, esto con un orden jerárquico de 
+	<b>Esta metodología sirve para separar los elementos en clases, esto con un orden jerárquico de
 		importancia, se agrega -- después del nombre de la clase para dar un nombre a un elemento en
 		específico.
 		<pre>
@@ -112,7 +116,8 @@
 	<div class="porcentaje">Porcentaje</div>
 	<b>El porcentaje ocupa la cantidad especificada de la caja, en este caso se ocupa el 50% de ancho y
 		el 30% de alto de la caja.</b>
-	<b>NOTA: El ancho inicial de todos los elementos de bloque como div o p es de manera auto (automática), esto hace que se expandan y ocupen todo el espacio horizontal de su bloque contenedor.</b>
+	<b>NOTA: El ancho inicial de todos los elementos de bloque como div o p es de manera auto (automática), esto hace
+		que se expandan y ocupen todo el espacio horizontal de su bloque contenedor.</b>
 	<hr>
 
 	<!--Contenedor para ver las propiedades de texto-->
@@ -121,7 +126,8 @@
 		<p>Hola</p>
 	</div>
 	<b>Este "Hola" tiene un tamaño de 5em, una tipografía de cursive, un line-height de 4; apartir de la
-		mitad de la palabra son 2 para arriba y 2 para abajo, es por ello que sobra espacio, grosor de 800 y un color rojo.</b>
+		mitad de la palabra son 2 para arriba y 2 para abajo, es por ello que sobra espacio, grosor de 800 y un color
+		rojo.</b>
 	<hr>
 
 	<!--Propiedades de las cajas-->
@@ -145,12 +151,13 @@
 		10px y el color de la sombra de la caja es roja. También la letra lleva una sombra con diferentes
 		medidas y color. Por último tiene una rotación de 2 grados.</b>
 	<hr>
-	
+
 	<!--Cajas para ver el funcionamiento del OUTLINE-->
 	<h1><i>Outline</i></h1>
 	<div class="caja1"></div>
 	<div class="caja2"></div>
-	<b>Outline es un borde pero sin afectar a las cajas, no ocupa un espacio real, es un resaltador ya que no aumenta el tamaño de la caja</b>
+	<b>Outline es un borde pero sin afectar a las cajas, no ocupa un espacio real, es un resaltador ya que no aumenta el
+		tamaño de la caja</b>
 	<hr>
 
 	<!--Cajas para ver la Position Relative-->
@@ -160,18 +167,21 @@
 	<div class="caja3-relative">Caja 3</div>
 	<b>Mantiene el valor que se reservó para la caja, pero se mueve dependiento el top y el left.</b>
 	<hr>
-	
+
 	<!--Cajas para ver la Position Absolute-->
 	<h1>Absolute</h1>
 	<div class="caja1-absolute">Caja 1</div>
-	<b>Si la caja tiene la position absolute y un top: 0 se coloca hasta arriba del viewport. (Líneas 256 y 257 comentadas para evitarlo)</b>
+	<b>Si la caja tiene la position absolute y un top: 0 se coloca hasta arriba del viewport. (Líneas 256 y 257
+		comentadas para evitarlo)</b>
 	<section class="caja-absolute">
 		<div class="caja-absolute__1">Caja 1</div>
 		<div class="caja-absolute__2">Caja 2</div>
 		<div class="caja-absolute__3">Caja 3</div>
 	</section>
-	<b>Cuando varias cajas están en un contenedor con position: relative y una de estas se le coloque un position: absolute, la caja se queda en su lugar pero sube la de abajo.</b>
-	<b>Si la caja no tiene definido el width y el height se ajusta al texto escrito. Si se le coloca un top: 0; la caja se va hasta arriba del viewport o la caja contenedora.</b>
+	<b>Cuando varias cajas están en un contenedor con position: relative y una de estas se le coloque un position:
+		absolute, la caja se queda en su lugar pero sube la de abajo.</b>
+	<b>Si la caja no tiene definido el width y el height se ajusta al texto escrito. Si se le coloca un top: 0; la caja
+		se va hasta arriba del viewport o la caja contenedora.</b>
 
 	<section class="caja-absolute2">
 		<div class="caja1-absolute2">Caja 1</div>
@@ -180,8 +190,10 @@
 		<div class="caja4-absolute2">Caja 4</div>
 		<div class="caja5-absolute2">Caja 5</div>
 	</section>
-	<b>La caja contenedora tiene una position relative para que las demás cajas puedan tomarla como el viewport. Para centrar la caja top, left, right y bottom tienen 0 y un margin auto.</b>
-	<b>Las cincos cajas tienen position: absolute para que pueden moverse libremente por el contenedor, si tuvieran position: relative no pudieran acomodarse por el espacio reservado de cada caja.</b>
+	<b>La caja contenedora tiene una position relative para que las demás cajas puedan tomarla como el viewport. Para
+		centrar la caja top, left, right y bottom tienen 0 y un margin auto.</b>
+	<b>Las cincos cajas tienen position: absolute para que pueden moverse libremente por el contenedor, si tuvieran
+		position: relative no pudieran acomodarse por el espacio reservado de cada caja.</b>
 	<hr>
 
 	<!--Cajas para ver el z-index-->
@@ -189,7 +201,8 @@
 	<div class="contenedor">
 		<div class="hijo"></div>
 	</div>
-	<b>El z-index ayuda a darle una jerarquía a las cajas con position: relative, el contenedor hijo siempre estará por encima del contendor padre, con z-index: -1 el hijo se coloca atrás del padre.</b>
+	<b>El z-index ayuda a darle una jerarquía a las cajas con position: relative, el contenedor hijo siempre estará por
+		encima del contendor padre, con z-index: -1 el hijo se coloca atrás del padre.</b>
 	<hr>
 
 	<!--Cajas para ver la position Fixed-->
@@ -210,7 +223,8 @@
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	</div>
-	<b>Fixed hace que el elemento con esta característica vaya bajando al igual que el scroll view de la página, también se ajusta al contenido. Ahora esta comentada la línea 364.</b>
+	<b>Fixed hace que el elemento con esta característica vaya bajando al igual que el scroll view de la página, también
+		se ajusta al contenido. Ahora esta comentada la línea 364.</b>
 	<hr>
 
 	<!--Caja para ver la position sticky-->
@@ -225,12 +239,14 @@
 	</div>
 	<div class="texto">
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+		do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur
+		adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -249,7 +265,8 @@
 	<i class="linea-display">Inline</i>
 	<i class="linea-display">Inline</i>
 	<i class="linea-display">Inline</i>
-	<b>Los elementos inline no pueden modificar su altura y anchura, si hay varios elementos con este display se van a colocan en línea.</b>
+	<b>Los elementos inline no pueden modificar su altura y anchura, si hay varios elementos con este display se van a
+		colocan en línea.</b>
 
 	<b class="linea-block">Inline-block</b>
 	<b class="linea-block">Inline-block</b>
@@ -268,13 +285,16 @@
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		lorem
 	</p>
-	<b>Overfloow ayuda a que un texto no se salga de la caja contenedora. El overfloow: auto agrega un scroll al contenedor tanto en el eje X como en Y.</b>
+	<b>Overfloow ayuda a que un texto no se salga de la caja contenedora. El overfloow: auto agrega un scroll al
+		contenedor tanto en el eje X como en Y.</b>
 
 	<div class="div-over">
-		<img src="https://thumbs.dreamstime.com/z/ejemplo-del-vector-de-las-gafas-sol-que-llevan-la-cara-linda-133937553.jpg" class="overfloow2">		
+		<img src="https://thumbs.dreamstime.com/z/ejemplo-del-vector-de-las-gafas-sol-que-llevan-la-cara-linda-133937553.jpg"
+			class="overfloow2">
 		</img>
 	</div>
-	<b>Overfloow: hidden ayuda con las imágenes dentro de un contenedor para que estas no se salgan, solo se vayan recorriendo. hidden no ayuda al texto ya que no se muestra todo.</b>
+	<b>Overfloow: hidden ayuda con las imágenes dentro de un contenedor para que estas no se salgan, solo se vayan
+		recorriendo. hidden no ayuda al texto ya que no se muestra todo.</b>
 
 	<p class="overfloow3">
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -285,7 +305,8 @@
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		lorem
 	</p>
-	<b>En este contenedor el eje Y tiene un overfloow-y: hidden haciendo que el contenedor se ajuste al texto y no se pueda bajar más, mientras el eje X tiene un overfloow-x: auto haciendo que el scroll se ajuste.</b>
+	<b>En este contenedor el eje Y tiene un overfloow-y: hidden haciendo que el contenedor se ajuste al texto y no se
+		pueda bajar más, mientras el eje X tiene un overfloow-x: auto haciendo que el scroll se ajuste.</b>
 	<hr>
 
 	<!--Float-->
@@ -293,24 +314,25 @@
 	<div class="contenedor_float">
 		<div>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<img src="https://thumbs.dreamstime.com/z/ejemplo-del-vector-de-las-gafas-sol-que-llevan-la-cara-linda-133937553.jpg">
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<img
+				src="https://thumbs.dreamstime.com/z/ejemplo-del-vector-de-las-gafas-sol-que-llevan-la-cara-linda-133937553.jpg">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 	</div>
 	<b>Float ayuda a posicionar una imagen o un contenedor, generalmente se usa el right o left.</b>
@@ -344,7 +366,8 @@
 	<form class="placehold">
 		<input type="text" placeholder="Weeey Nooo :'v">
 	</form>
-	<b>::placeholder muestra por defecto palabras dentro de un input, al escribir algo se quita la palabra por defecto.</b>
+	<b>::placeholder muestra por defecto palabras dentro de un input, al escribir algo se quita la palabra por
+		defecto.</b>
 
 	<h2>::selection</h2>
 	<p class="seleccion">Subraya el texto</p>
@@ -354,7 +377,8 @@
 	<div class="antes_despues">
 		<i>es</i>
 	</div>
-	<b>::before y ::after funcionan dentro de un contenedor, son un elemento en línea. Ha ambos se le pueden agregar palabras antes y después de lo ya escrito en HTML en el código CSS.</b>
+	<b>::before y ::after funcionan dentro de un contenedor, son un elemento en línea. Ha ambos se le pueden agregar
+		palabras antes y después de lo ya escrito en HTML en el código CSS.</b>
 	<hr>
 
 	<!--Pseudo-Clases-->
@@ -363,13 +387,16 @@
 	<div class="hoveer">
 		<i>Pasar el cursor por encima</i>
 	</div>
-	<b>:hover funciona cuando el cursor pasa por encima, hace las animaciones, sirve con cualquier elemento, también se puede modificar el tamaño.</b>
+	<b>:hover funciona cuando el cursor pasa por encima, hace las animaciones, sirve con cualquier elemento, también se
+		puede modificar el tamaño.</b>
 
 	<h2>:link y :visited</h2>
-	<a class="enlace1" href="https://teziutlan.tecnm.mx/index.php/estructura-organica/" target="_BLANK">Enlace no visitado</a>
+	<a class="enlace1" href="https://teziutlan.tecnm.mx/index.php/estructura-organica/" target="_BLANK">Enlace no
+		visitado</a>
 	<!--El target="_BLANK" sirve para abrir el enlace en otra página-->
 	<a class="enlace2" href="https://teziutlan.tecnm.mx?dsfascdsa" target="_BLANK">Enlace visitado</a>
-	<b>:link resalta un link que no se ha visitado, :visited cambia el texto cuando se entro al link. NOTA: target="_BLANK" abre una nueva ventana del navegador.</b>
+	<b>:link resalta un link que no se ha visitado, :visited cambia el texto cuando se entro al link. NOTA:
+		target="_BLANK" abre una nueva ventana del navegador.</b>
 
 	<h2>:active</h2>
 	<div class="activee">
@@ -393,26 +420,31 @@
 	<h1>Object-Fit y Objecto-Position</h1>
 	<h2>Contain</h2>
 	<div class="caja_object">
-		<img class="containn" src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
+		<img class="containn"
+			src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
 	</div>
-	<b>Contain: este valor viene por defecto, hace que la resolución de la imagen se ajusten al contenedor padre dejando espacios en blanco.</b>
+	<b>Contain: este valor viene por defecto, hace que la resolución de la imagen se ajusten al contenedor padre dejando
+		espacios en blanco.</b>
 
 	<h2>Cover</h2>
 	<div class="caja_object2">
-		<img class="coverr" src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
+		<img class="coverr"
+			src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
 	</div>
 	<b>Cover: la imagen se acopla al tamaño de la caja, sin dejar espacios como en Contain.</b>
 	<b>El Objecto-Position sirve para posicionar la imágen, ya sea en Top, Buttom, Left o right.</b>
 
 	<h2>None</h2>
 	<div class="caja_object3">
-		<img class="nonee" src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
+		<img class="nonee"
+			src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
 	</div>
 	<b>None: usa el tamaño de la imagen, no importa las dimensiones del contenedor.</b>
 
 	<h2>Scale-Down</h2>
 	<div class="caja_object4">
-		<img class="scale" src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
+		<img class="scale"
+			src="https://services.meteored.com/img/article/el-pentagono-se-prepara-para-revelar-informacion-inedita-sobre-ovnis-330641-1_1280.jpg">
 	</div>
 	<b>Scale-down: escoge entre Contain y Cover, toma el que genere menos dimensión a la imagen.</b>
 	<hr>
@@ -428,11 +460,14 @@
 	<div class="nombre">Color por nombre</div>
 	<b>Solo se escribre el nombre del color, hay muchos ya designados.</b>
 	<div class="rgb">Color por RGB</div>
-	<b>Los colores primarios son Rojo, Verde y Azul (RGB - Red, Green, Blue). Con RGB se va del 0 al 255, donde 0 es el más obscuro, mientras que 255 es el color más claro. La sintaxis es rgb(100,150,150)</b>
+	<b>Los colores primarios son Rojo, Verde y Azul (RGB - Red, Green, Blue). Con RGB se va del 0 al 255, donde 0 es el
+		más obscuro, mientras que 255 es el color más claro. La sintaxis es rgb(100,150,150)</b>
 	<div class="rgba">Color por RGBA</div>
-	<b>Es lo mismo que el RGB solo que se le agrega el parámetro de opacity, el 1 es lo menos ocapo, va disminuyendo como .9, .8 etc que lo hace más opacity. La sintaxis es rgba(150, 60, 200, .5)</b>
+	<b>Es lo mismo que el RGB solo que se le agrega el parámetro de opacity, el 1 es lo menos ocapo, va disminuyendo
+		como .9, .8 etc que lo hace más opacity. La sintaxis es rgba(150, 60, 200, .5)</b>
 	<div class="hexa">Color en Hexadecimal</div>
-	<b>Aquí los colores van del 1 al 10 y continuan de A hasta F, esto porque así es la cuenta en hexadecimal, donde 1 es lo más obscuro y F lo más claro.</b>
+	<b>Aquí los colores van del 1 al 10 y continuan de A hasta F, esto porque así es la cuenta en hexadecimal, donde 1
+		es lo más obscuro y F lo más claro.</b>
 	<div class="cajaImagen">
 		<img src="Colores Hexadecimal.png" class="imagenHexa">
 	</div>
@@ -442,28 +477,36 @@
 	<h1>Mobile First</h1>
 	<p>Es adaptar resoluciones pequeñas a grandes (Moviles - Tablet - Escritorio)</p>
 	<a href="responsive.html">Página de Responsive Desing sin JavaScript.</a>
-	<b>La etiqueta <i>meta viewport</i> sirve ayuda a que se respeten las dimensiones de los elementos en una tablet, mobil o escritorio.</b>
-	<b>Para poder usar íconos de Font Awesome se necesita el script de un proyecto (dentro de head). Y dentro de la definición de la clase de un elemento i, se coloca el tipo de ícono. <i class="fas fa-address-card"></i></b>
+	<b>La etiqueta <i>meta viewport</i> sirve ayuda a que se respeten las dimensiones de los elementos en una tablet,
+		mobil o escritorio.</b>
+	<b>Para poder usar íconos de Font Awesome se necesita el script de un proyecto (dentro de head). Y dentro de la
+		definición de la clase de un elemento i, se coloca el tipo de ícono. <i class="fas fa-address-card"></i></b>
 	<hr>
 
 	<!--FlexBox-->
 	<h1>FlexBox</h1>
-	<b>El Diseño de Caja Flexible facilita el diseño responsible y flexible. Se requieren dos componentes: Flex Container: contenedor principal y Flex Items: elementos dentro del contenedor.</b>
-	<b>Tiene Ejes: Que son main axis (eje principal) y cross axis (eje secundario). Y para complementar main size, cross size, main start, main end, cross start, cross end.</b>
+	<b>El Diseño de Caja Flexible facilita el diseño responsible y flexible. Se requieren dos componentes: Flex
+		Container: contenedor principal y Flex Items: elementos dentro del contenedor.</b>
+	<b>Tiene Ejes: Que son main axis (eje principal) y cross axis (eje secundario). Y para complementar main size, cross
+		size, main start, main end, cross start, cross end.</b>
 	<div class="flexImg-content">
 		<img class="flexImg" src="Flex-Components.jpg" alt="Flex-Components">
 	</div>
 	<h2>Flex</h2>
 	<div class="flex-container">
 		<div class="flex-item">
-			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum repudiandae dicta consequatur at totam delectus sequi, sed nisi, quidem unde sit doloribus odio numquam non earum voluptatem natus itaque quasi. 
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro alias velit ducimus iusto amet dignissimos optio aliquid accusantium illo minima dolore numquam voluptatibus consequuntur, modi ut nostrum vero dolorum mollitia!
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum repudiandae dicta consequatur at totam
+			delectus sequi, sed nisi, quidem unde sit doloribus odio numquam non earum voluptatem natus itaque quasi.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro alias velit ducimus iusto amet dignissimos
+			optio aliquid accusantium illo minima dolore numquam voluptatibus consequuntur, modi ut nostrum vero dolorum
+			mollitia!
 		</div>
 		<div class="flex-item">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. lorem
 		</div>
 	</div>
-	<b>El flex-container tiene la propiedad display: flex, permitiendo que ambos contenedores se ajusten de acuerdo a su contenido.</b>
+	<b>El flex-container tiene la propiedad display: flex, permitiendo que ambos contenedores se ajusten de acuerdo a su
+		contenido.</b>
 	<code class="code">
 		<span class="code-selector">.flex-container </span> { <span class="code-property">display</span> : <span class="code-value">flex</span> ; }
 	</code>
@@ -476,5 +519,71 @@
 		<div class="flex-direction_item"></div>
 	</div>
 
+	<h2>Flex-Wrap</h2>
+	<b>Flex-Wrap permite que el contenedor flex padre pueda ser multilínea y los contenedores hijos se desborden.</b>
+	<b>Existe una propiedad llamada flex-flow que permite resumir los valores de flex-direction y flex-wrap.</b>
+	<div class="flex-wrap">
+		<div class="flex-wrap_item">Caja Flexible</div>
+		<div class="flex-wrap_item">Caja Flexible</div>
+		<div class="flex-wrap_item">Caja Flexible</div>
+		<div class="flex-wrap_item">Caja Flexible</div>
+		<div class="flex-wrap_item">Caja Flexible</div>
+		<div class="flex-wrap_item">Caja Flexible</div>
+		<div class="flex-wrap_item green">Caja Flexible</div>
+	</div>
+
+	<h2>Alineación en Flex</h2>
+	<b>Existen tres propiedades para alinear y centrar los elementos flexibles.</b>
+	<ol>
+		<li><code>justify-content</code>: alinea items del eje principal [main axis]</li>
+		<li><code>align-items</code>: alinea items del eje secundario [cross axis]</li>
+		<li><code>align-content</code>: alinea el contenido del eje secundario cuando usamos <code>flex-grap</code></li>
+		<li><code>align-self</code>: alinea solamente un flex-item en el eje secundaria [cross axis]</li>
+		<p><strong>align-items</strong> se utiliza solo cuando hay una linea de items, <strong>align-content</strong>cuando hay varias lineas de items; por ello se recomiendo utilizarlo
+			con la propiedad wrap.
+		</p>
+	</ol>
+
+	<h3>justify-content</h3>
+	<div class="flex-justify">
+		<div class="flex-justify-item">Caja Flexible</div>
+		<div class="flex-justify-item">Caja Flexible</div>
+		<div class="flex-justify-item">Caja Flexible</div>
+		<div class="flex-justify-item green">Caja Flexible</div>
+	</div>
+
+	<h3>align-items</h3>
+	<div class="flex-align">
+		<div class="flex-align-item">Caja Flexible</div>
+		<div class="flex-align-item">Caja Flexible</div>
+		<div class="flex-align-item">Caja Flexible</div>
+		<div class="flex-align-item green">Caja Flexible</div>
+	</div>
+
+	<h3>align-content</h3>
+	<div class="flex-content">
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item">Caja Flexible</div>
+		<div class="flex-content-item green">Caja Flexible</div>
+	</div>
+
+	<h3>align-self</h3>
+	<div class="flex-self">
+		<div class="flex-self-item">Caja Flexible</div>
+		<div class="flex-self-item">Caja Flexible</div>
+		<div class="flex-self-item">Caja Flexible</div>
+		<div class="flex-self-item blue">Caja Flexible</div>
+	</div>
 </body>
 </html>

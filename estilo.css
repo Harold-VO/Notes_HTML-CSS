@@ -801,6 +801,117 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 	margin: 5px;
 }
 
+.flex-wrap {
+	display: flex;
+	/* la propiedad flex-wrap permite que el contenedor flex padre pueda ser multilínea y los contenedores hijos se desborden.
+		-wrap (hace multilinea al contenedor)
+		-nowrap (los item/contenedores hijos se ajustan al contenedor padre para no desbordarse)
+		-wrap-reverse (los item/contenedores hijos se desbordan de manera inversa, se van al renglon superior) 
+		
+	   Existe una propiedad llamada flex-flow que permite resumir los valores de flex-direction y flex-wrap.
+	   	-flex-flow: row wrap;*/
+	flex-flow: row-reverse wrap-reverse;
+}
+
+.flex-wrap_item {
+	background-color: #FFB84F;
+	height: 120px;
+	width: 120px;
+	margin: 5px;
+	text-align: center;
+}
+
+.flex-justify {
+	display: flex;
+	/* la propiedad justify-content tiene diferentes valores para el contenedor padre.
+		-star [agrupa los item al inicio del main axis]
+		-end [agrupa los item al final del main axis]
+		-center [centra los item del main axis]
+		-space-between [separa los item, dejando espacio entre ellos]
+		-space-around [separa los item, dejando espacio alrededor de ellos]
+		-space-evently [es similar al space-around, solo que el espacio entre items es igual]
+	*/
+	justify-content: start;
+}
+
+.flex-justify-item {
+	background-color: #FFB84F;
+	height: 120px;
+	width: 120px;
+	margin: 5px;
+	text-align: center;
+}
+
+.flex-align {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	/* La propiedad align-items tiene varios valores que permiten colocar los flex-item en una posicion especifica del cross axis
+		-start [alinea los items al inicio del eje]
+		-end [alinea los items al final del eje]
+		-center [alinea los items al centro del eje]
+		-stretch [alinea los items estirandolos desde el inicio al final del eje]
+		-baseline [alinea los ítems en el contenedor según la base del contenido de los ítems del contenedor]
+	*/
+	align-items: stretch;
+	height: 50vh;
+	background-color: #5E9BC6;
+}
+
+.flex-align-item {
+	background-color: #FFB84F;
+	/* height: 120px; SI DESEAMOS VER EL FUNCIONAMIENTO DE STRETCH, LOS FLEX-ITEM NO DEBEN TENER HEIGHT*/ 
+	width: 120px;
+	margin: 5px;
+	text-align: center;
+}
+
+.flex-content {
+	height: 50vh;
+	display: flex;
+	flex-wrap: wrap-reverse;
+	justify-content: end;
+	/* La propiedad align-content tiene varios valores que permiten acomodar flex-items multilinea, esto en el eje cross axis
+		-start [ajusta los item al inicio del eje]
+		-end [ajusta los item al final del eje]
+		-center [ajusta los item al centro del eje]
+		-space-between [separa los flex-item dejando espacio entre ellos]
+		-space-around [separa los flex-item dejando espacio al rededor de ellos]
+		-stretch [estira los item para ocupar de forma equitativa todo el espacio]
+	*/
+	align-content: space-around;
+	background-color: #5E9BC6;
+}
+
+.flex-content-item {
+	background-color: #FFB84F;
+	height: 180px;
+	width: 180px;
+	margin: 5px;
+	text-align: center;
+}
+
+.flex-self {
+	display: flex;
+	justify-content: center;
+	height: 30vh;
+	background-color: #5E9BC6;
+}
+
+.flex-self-item {
+	background-color: #FFB84F;
+	height: 120px;
+	width: 120px;
+	margin: 5px;
+	text-align: center;
+}
+
 .green {
 	background-color: green;
+}
+
+.blue {
+	background-color: blue;
+	/* La propiedad align-self es similar a align-content, solo que esta solo coloca un solo flex-item */
+	align-self: flex-end;
 }
