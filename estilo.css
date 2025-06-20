@@ -867,7 +867,6 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 }
 
 .flex-content {
-	height: 50vh;
 	display: flex;
 	flex-wrap: wrap-reverse;
 	justify-content: end;
@@ -904,6 +903,21 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 	width: 120px;
 	margin: 5px;
 	text-align: center;
+}
+
+.flex-grow {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px;
+	background-color: #5E9BC6;
+}
+
+.flex-grow_item {
+	height: 120px;
+	width: 120px;
+	text-align: center;
+	/* La propiedad flex-grow toma el espacio restante del flex-container y lo divide entre los flex-item que tiene esta propiedad */
+	flex-grow: 1;
 }
 
 .green {
