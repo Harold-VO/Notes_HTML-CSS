@@ -909,15 +909,20 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 	display: flex;
 	flex-wrap: wrap;
 	margin: 10px;
+	height: 10vh;
+	justify-content: space-around;
 	background-color: #5E9BC6;
 }
 
-.flex-grow_item {
-	height: 120px;
-	width: 120px;
+.flex-grow_item:first-child {
 	text-align: center;
-	/* La propiedad flex-grow toma el espacio restante del flex-container y lo divide entre los flex-item que tiene esta propiedad */
 	flex-grow: 1;
+	background-color: #2c3e50
+}
+
+.flex-grow_item:last-child {
+	text-align: center;
+	background-color: #f90;
 }
 
 .green {
@@ -928,4 +933,48 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 	background-color: blue;
 	/* La propiedad align-self es similar a align-content, solo que esta solo coloca un solo flex-item */
 	align-self: flex-end;
+}
+
+.flex-shrink {
+	display: flex;
+	flex-flow: row;
+	justify-content: start;
+	margin: 10px;
+	height: 10vh;
+	background-color: #5E9BC6;
+}
+
+.flex-shrink_item:first-child {
+	/* Este flex-item reduce su espacio mas que los demas cuando el flex-container ya no tiene espacio.*/
+	flex-shrink: 5;
+	background-color: #FFB84F;
+}
+
+.flex-shrink_item {
+	width: 200px;
+	text-align: center;
+	background-color: #D37754;
+}
+
+.flex-basic {
+	display: flex;
+	flex-flow: row;
+	justify-content: start;
+	margin: 10px;
+	height: 10vh;
+	background-color: #5E9BC6;
+}
+
+.flex-basic_item:first-child {
+	/* La dimension de este item no se puede hacer mas grande, pero si se puede encoger. */
+	flex-basis: 500px;
+	background-color: #FFB84F;
+}
+
+.flex-basic_item {
+	background-color: #D37754;
+}
+
+.flex-basic_item:last-child {
+	background-color: #FFB84F;
 }

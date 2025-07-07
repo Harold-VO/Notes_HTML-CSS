@@ -587,17 +587,29 @@
 	</div>
 
 	<h3>flex-grow</h3>
-	<b>Toma el espacio sobrante y lo reparte entre los flex-items</b>
+	<b>Permite adminsitar el espacio del flex padre para que lo ocupen los flex hijos.</b>
 	<div class="flex-grow">
-		<div class="flex-grow_item green">Caja Flexible</div>
 		<div class="flex-grow_item">Caja Flexible</div>
-		<div class="flex-grow_item blue">Caja Flexible</div>
+		<div class="flex-grow_item">Caja Flexible</div>
+		<div class="flex-grow_item">Caja Flexible</div>
+		<div class="flex-grow_item">Caja Flexible</div>
 	</div>
 
 	<h3>flex-shrink</h3>
-	<b>Sede espacio cuando en un flex-container no alcance el lugar disponible</b>
+	<b>Sede espacio cuando en un flex-container no alcance el lugar disponible. Determina la capacidad para encogerse.</b>
+	<div class="flex-shrink">
+		<div class="flex-shrink_item">Caja Flexible</div>
+		<div class="flex-shrink_item">Caja Flexible</div>
+		<div class="flex-shrink_item">Caja Flexible</div>
+		<div class="flex-shrink_item">Caja Flexible</div>
+	</div>
 	
 	<h3>flex-basic</h3>
-	<b>La propiedad <code>flex-basis</code> especifica el tamano inicial de un elemento flexible.</b>	
+	<b>La propiedad <code>flex-basis</code> especifica el tamano inicial de un elemento flexible. En Flex-Box el width se reemplaza con flex-basic</b>	
+	<div class="flex-basic">
+		<div class="flex-basic_item">Caja Flexible</div>
+		<div class="flex-basic_item">Caja Flexible</div>
+		<div class="flex-basic_item">Caja Flexible</div>
+	</div>
 </body>
 </html>
