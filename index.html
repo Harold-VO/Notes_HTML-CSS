@@ -561,6 +561,7 @@
 	</div>
 
 	<h3>align-content</h3>
+	<b>Alinea todos los flex-item del flex-container en el eje cross-axis</b>
 	<div class="flex-content">
 		<div class="flex-content-item">Caja Flexible</div>
 		<div class="flex-content-item">Caja Flexible</div>
@@ -579,6 +580,7 @@
 	</div>
 
 	<h3>align-self</h3>
+	<b>Esta propiedad es similar a align-content, solo que esta se aplica a un flex-item</b>
 	<div class="flex-self">
 		<div class="flex-self-item">Caja Flexible</div>
 		<div class="flex-self-item">Caja Flexible</div>
@@ -610,6 +612,41 @@
 		<div class="flex-basic_item">Caja Flexible</div>
 		<div class="flex-basic_item">Caja Flexible</div>
 		<div class="flex-basic_item">Caja Flexible</div>
+	</div>
+	<b>Es importante mencionar que un flex-item tiene por defecto en los valores basis,shrink y grow:</b>
+	<code class="code">
+		<span class="code-selector">.flex-item </span> { <span class="code-property"></span>flex-basis: <span class="code-value">auto</span> ;
+			<span class="code-property"></span>flex-shrink: <span class="code-value">1</span> ;
+			<span class="code-property"></span>flex-grow: <span class="code-value">0</span> ; }
+	</code>
+	<b>Para abreviar estas tres propiedades se utiliza flex dentro de un item. En el orden grow - shrink - basis</b>
+	<code class="code">
+		<span class="code-selector">.flex-item </span> { <span class="code-property"></span>flex: <span class="code-value">0 1 auto</span> ;	 }
+	</code>
+
+	<h3>gap</h3>
+	<b>Esta propiedad separa los flex-item del flex-container.</b>
+	<div class="flex-gap">
+		<div class="flex-gap_item">1</div>
+		<div class="flex-gap_item">2</div>
+		<div class="flex-gap_item">3</div>
+		<div class="flex-gap_item">4</div>
+		<div class="flex-gap_item">5</div>
+		<div class="flex-gap_item">6</div>
+		<div class="flex-gap_item">7</div>
+		<div class="flex-gap_item">8</div>
+		<div class="flex-gap_item">9</div>
+		<div class="flex-gap_item">10</div>
+		<div class="flex-gap_item">11</div>
+		<div class="flex-gap_item">12</div>
+	</div>
+
+	<h3>order</h3>
+	<b>La propiedad order permite ordenar los flex-item.</b>
+	<div class="flex-order">
+		<div class="flex-order_item">1</div>
+		<div class="flex-order_item">2</div>
+		<div class="flex-order_item">3</div>
 	</div>
 </body>
 </html>

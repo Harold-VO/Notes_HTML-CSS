@@ -868,7 +868,7 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 
 .flex-content {
 	display: flex;
-	flex-wrap: wrap-reverse;
+	flex-flow: row wrap;
 	justify-content: end;
 	/* La propiedad align-content tiene varios valores que permiten acomodar flex-items multilinea, esto en el eje cross axis
 		-start [ajusta los item al inicio del eje]
@@ -878,15 +878,15 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 		-space-around [separa los flex-item dejando espacio al rededor de ellos]
 		-stretch [estira los item para ocupar de forma equitativa todo el espacio]
 	*/
-	align-content: space-around;
+	align-content: end;
+	height: 360px;
 	background-color: #5E9BC6;
 }
 
 .flex-content-item {
 	background-color: #FFB84F;
-	height: 180px;
 	width: 180px;
-	margin: 5px;
+	margin: 30px;
 	text-align: center;
 }
 
@@ -977,4 +977,47 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 
 .flex-basic_item:last-child {
 	background-color: #FFB84F;
+}
+
+.flex-gap{
+	display: flex;
+	flex-flow: row wrap;
+	margin: 20px;
+	align-items: center;
+	border: 2px solid #000;
+	/* La propiedad gap separa los flex-item, siempre va en el flex padre */
+	gap: 10px;
+}
+
+/* el pseudoclase :nth-child() coincide a los pares */
+.flex-gap_item:nth-child(2n) {
+	background-color: #f77;
+}
+
+.flex-gap_item {
+	background-color: #800;
+	color: #fff;
+	text-align: center;
+	flex: 1 1 100px;
+}
+
+.flex-order {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 20px;
+	align-items: center;
+	border: 2px solid #000;
+	gap: 10px;
+}
+
+.flex-order_item:first-child {
+	order: 3;
+	background-color: #5E9BC6;
+}
+
+.flex-order_item {
+	background-color: #800;
+	color: #fff;
+	text-align: center;
+	flex: 1 1 100px;
 }
