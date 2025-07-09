@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background-color: #f80;
+    color: #fff;
+}
+
+div, header, nav, ul, h1, h2, p, img {
+    box-sizing: border-box;
+}
+
+.header {
+    height: 100vh;
+    box-sizing: border-box;
+    background-image: url("firefox.webp");
+    /* Esta propiedad ayuda a que la imagen de fondo no se duplique */
+    background-size: cover;
+    display: flex;
+}
+
+.header_overlay {
+    height: 100vh;
+    width: 100%;
+    background-color: #f809;
+    position: absolute;
+    z-index: 1;
+}
+
+.header__item-container {
+    position: relative;
+    z-index: 10;
+    margin: auto;
+    text-align: center;
+    max-width: 700px;
+}
+
+.header__img {
+    min-width: 250px;
+    max-width: 40%;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin: 20px;
+}
+
+.header__item-container p {
+    /* La propiedad pretty ayuda a que no haya una palabra en un renglon */
+    text-wrap: pretty;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3.6rem;
+    /* La propiedad text-wrap ayuda a tener el texto bien ordenado, en cualquier resolucion. */
+    text-wrap: balance;
+}
+
+/* SECCION DEL MENU */
+
+.nav {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 6px 100px 6px 40px;
+}
+
+.nav__ul {
+    margin: 0;
+    display: flex;
+}
+
+.nav__item {
+    list-style: none;
+}
+
+.nav__link {
+    color: #f80;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin: 6px;
+    border-radius: 0;
+    transition: background-color 0.3s, border-radius 0.24s;
+}
+
+.nav__item:hover {
+    background-color: #f803;
+    border-radius: 20px;
+}
+
+
+.nav__img {
+    width: 50px;
+}
+
