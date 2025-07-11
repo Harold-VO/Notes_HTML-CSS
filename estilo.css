@@ -1021,3 +1021,20 @@ h4{ /*Los elementos están en el nivel más bajo, pero como tiene el !important 
 	text-align: center;
 	flex: 1 1 100px;
 }
+
+/* GRID SECTION */
+.grid {
+	display: grid;
+	/* Estas propiedades definen el tamano de cada columna y fila dentro del GRID.
+		El orden es 1er, 2da... fila/columna */
+	grid-template-columns: 50% 100px 200px;
+	grid-template-rows: 90px 200px;
+}
+
+.grid-item {
+	background-color: #48e;
+	color: #fff;
+	font-size: 30px;
+	margin: 10px;
+	padding: 10px;
+}
