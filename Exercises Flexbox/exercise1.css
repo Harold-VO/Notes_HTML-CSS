@@ -1,0 +1,18 @@
+.flex-container {
+    background-color: rgb(102, 139, 65);
+    border: 5px solid #805;
+    height: 95vh;
+    width: 98vw;
+    display: flex;
+    justify-content: center; /* Eje horizontal, main-axis */
+    align-items: center; /* Eje vertical, cross-axis */
+}
+
+.flex-item {
+    background-color: rgb(187, 209, 89);
+    border: 5px solid #805;
+    margin: 10px;
+    text-align: center;
+    height: 80px;
+    width: 80px;
+}
